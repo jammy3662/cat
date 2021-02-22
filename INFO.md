@@ -80,7 +80,7 @@ namespace basicMath {
 };
 namespace advancedMath:  {
 	int add(int a, int b) {
-		return 0 + a + b;
+		return 0 + a + b + 0;
 	}
 };
 ```
