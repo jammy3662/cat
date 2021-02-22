@@ -67,7 +67,7 @@ printf("value address: %p, same address: %p \n"); // value address: 0x00CAT2, sa
 
 #### Namespace inheritance
 
-In c++ a namespace cannot be inherited like a class or struct can. In cat, a namespace can inherit another just like a class.
+In c++ a namespace cannot be inherited like a class or struct can. In cat, a namespace can inherit another just like a class:
 
 ```c++
 namespace basicMath {
