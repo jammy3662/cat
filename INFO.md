@@ -71,16 +71,16 @@ In c++ a namespace cannot be inherited like a class or struct can. In cat, a nam
 
 ```c++
 namespace basicMath {
-  virtual int add(int a, int b) {
-    return a + b;
-  }
-  int multiply(int a, int b) {
-    return a * b;
-  }
+	virtual int add(int a, int b) {
+		return a + b;
+	}
+	int multiply(int a, int b) {
+		return a * b;
+	}
 };
 namespace advancedMath:  {
-  int add(int a, int b) {
-    return 0 + a + b;
-  }
+	  int add(int a, int b) {
+		return 0 + a + b;
+	}
 };
 ```
