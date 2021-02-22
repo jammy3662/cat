@@ -65,3 +65,22 @@ int* addressOfSame = &same;
 printf("value address: %p, same address: %p \n"); // value address: 0x00CAT2, same address: 0x00CAT2
 ```
 
+#### Namespace inheritance
+
+In c++ a namespace cannot be inherited like a class or struct can. In cat, a namespace can inherit another just like a class.
+
+```c++
+namespace basicMath {
+  virtual int add(int a, int b) {
+    return a + b;
+  }
+  int multiply(int a, int b) {
+    return a * b;
+  }
+};
+namespace advancedMath:  {
+  int add(int a, int b) {
+    return 0 + a + b;
+  }
+};
+```
