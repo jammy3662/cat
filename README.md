@@ -7,7 +7,7 @@ An adapted version of C++ (C2) with support for more advanced programming.
 #### 0 argument function calls 
 
 Functions that do not take arguments can be called either with or without an open/close parentheses.
-For example, the function onePlusTwo would be written as:
+For example, the function `onePlusTwo` would be written as:
 
 ```c++
 int onePlusTwo() { return 1 + 2; }
@@ -54,7 +54,7 @@ Changing the value of either the original or the linked variable will update BOT
 
 ```c++
 int value = 5;
-int same <-> value;
+int same <=> value;
 printf("value: %i, same: %i \n"); // value: 5, same: 5
 value = 256; 
 printf("value: %i, same: %i \n"); // value: 256, same: 256
@@ -63,6 +63,29 @@ printf("value: %i, same: %i \n"); // value: 0, same: 0
 int* addressOfValue = &value;
 int* addressOfSame = &same;
 printf("value address: %p, same address: %p \n"); // value address: 0x00CAT2, same address: 0x00CAT2
+```
+
+#### Dependent ( <= ) operator
+
+This operator is used to create a variable that evaluates a single expression each time its value is accessed. Like a linked variable, a 'dependent' variable has none of its own memory or data. It acts functionally similar to an inlined function, in that it will collapse to an expression that gets evaluated on the spot each time it is referenced.
+Below is an example of how this could be utilized to create a variable that keeps track of the bottom-right point of a rectangle that keeps variables for only its top-left corner and size.
+
+```c++
+struct pt {
+	int x, y;
+	pt() {
+		x = 0; y = 0;
+	}
+	pt(int nx, int ny) {
+		x = nx; y = ny;
+	}
+};
+struct rect {
+	pt pos = pt(0,0);
+	int w = 10;
+	int h = 10;
+	int center <= pt(pos.x + w, pos.y + h);
+}
 ```
 
 #### Namespace inheritance
@@ -84,3 +107,5 @@ namespace advancedMath:  {
 	}
 };
 ```
+
+In this example the namespace `advancedMath` already has the `multiply` function defined in `basicMath`.
