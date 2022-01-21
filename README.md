@@ -52,6 +52,8 @@ This is identical to giving an existing variable an alternate name.
 Defining a linked variable DOES NOT use new memory or create new data. It instead refers to the memory and data of the linked variable.
 Changing the value of either the original or the linked variable will update BOTH variables.
 
+NOTE: This has the same effect as creating a reference in C++.
+
 ```c++
 int value = 5;
 int same <=> value;
