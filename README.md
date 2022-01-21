@@ -103,7 +103,7 @@ namespace basicMath {
 		return a * b;
 	}
 };
-namespace advancedMath:  {
+namespace advancedMath: basicMath {
 	int add(int a, int b) {
 		return 0 + a + b + 0;
 	}
